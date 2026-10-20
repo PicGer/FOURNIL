@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="../asset/css/style.css">
 
     <title>Contact - Le Fournil</title>
-
 </head>
 
 <body>
@@ -16,8 +15,8 @@
     <header>
         <h1>Le Fournil</h1>
 
-        <nav>
-            <ul>
+        <nav aria-label="Navigation principale">
+            <ul class="menu">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="carte.html">La carte</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -45,73 +44,94 @@
             <a href="tel:+33559123456">05 59 12 34 56</a>
         </p>
 
-    <form action="#" method="post">
+        <form action="#" method="post">
+            <h2>Formulaire de précommande</h2>
 
-        <h2>Formulaire de commande</h2>
+            <fieldset>
+                <legend>Vos coordonnées</legend>
 
-        <fieldset>
-            <legend>Vos coordonnées</legend>
-            <p>
-                <label for="nom">Nom complet *</label>
-                <input type="text" id="nom" name="nom" autocomplete="name" required>
+                <p>
+                    <label for="nom">Nom complet *</label>
+                    <input type="text" id="nom" name="nom"
+                        autocomplete="name" required>
+                </p>
 
-                <label for="email">E-mail *</label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
+                <p>
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email"
+                        autocomplete="email" required>
+                </p>
 
-                <label for="tel">Téléphone:</label>
-                <input type="tel" id="tel" name="tel" autocomplete="tel"
-                        pattern="0[0-9]([.]?[0-9]{2}){4}"
+                <p>
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" id="tel" name="tel"
+                        autocomplete="tel"
+                        pattern="0[1-9]([ .]?[0-9]{2}){4}"
                         title="Format : 06 12 34 56 78">
-            </p>
-        </fieldset>
+                </p>
+            </fieldset>
 
-        <fieldset>
-            <legend>Votre commande</legend>
-            <p>
-                <label for="produit">Produit</label>
+            <fieldset>
+                <legend>Votre commande</legend>
 
-                <select id="produit" name="produit" required>
-                    <option value="">-Choisir-</option>
-                    <option value="tradition">Pain tradition</option>
-                    <option value="levain">Pain au levain</option>
-                    <option value="maïs">Pain au maïs</option>
-                    <option value="complet">Pain complet</option>
-                </select>
-            </p>
+                <p>
+                    <label for="produit">Produit *</label>
+
+                    <select id="produit" name="produit" required>
+                        <option value="">— Choisir —</option>
+                        <option value="tradition">Pain tradition</option>
+                        <option value="levain">Pain au levain</option>
+                        <option value="mais">Pain au maïs</option>
+                        <option value="complet">Pain complet</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="qte">Quantité</label>
+                    <input type="number" id="qte" name="qte"
+                        min="1" max="20" value="1">
+                </p>
+
+                <p>
+                    <label for="date">Date de retrait *</label>
+                    <input type="date" id="date" name="date" required>
+                </p>
+
+                <p>
+                    <input type="radio" id="retrait-magasin"
+                        name="retrait" value="magasin" checked>
+
+                    <label for="retrait-magasin">Retrait en magasin</label>
+
+                    <input type="radio" id="livraison"
+                        name="retrait" value="livraison">
+
+                    <label for="livraison">Livraison à domicile</label>
+                </p>
+
+                <p>
+                    <label for="msg">Message</label>
+
+                    <textarea id="msg" name="msg"
+                        rows="4" maxlength="300"></textarea>
+                </p>
+            </fieldset>
 
             <p>
-                <label for="qte">Quantité</label>
-                <input type="number" id="qte" name="qte" min="1" max="20" value="1">
-            </p>
-
-            <p>
-                <label for="date">Date de retrait *</label>
-                <input type="date" id="date" name="date" required>
-            </p>
-            <p>
-                 
-                <label for="retrait-magasin">Retrait en magasin</label>
-                <input type="radio" id="retrait-magasin" name="retrait" value="magasin">
-
-                <label for="livraison">Livraison à domicile</label>
-                <input type="radio" id="livraison" name="retrait" value="livraison">
-
-            </p>
-            <p>
-                <label for="msg">Message</label>
-                <textarea id="msg" name="msg" rows="4" maxlength="300"></textarea>
-            </p> 
-            <p>
-                <label for="cgv">J'accepte les conditions générales de vente</label>
                 <input type="checkbox" id="cgv" name="cgv" required>
-            </p> 
-        </fieldset>
-        
-    </form>
+
+                <label for="cgv">
+                    J'accepte les conditions générales de vente *
+                </label>
+            </p>
+
+            <p>
+                <button type="submit">Envoyer la précommande</button>
+            </p>
+        </form>
     </main>
 
     <footer>
-    
         <section class="infos-pratiques">
             <h2>Infos pratiques</h2>
 
@@ -144,7 +164,6 @@
                 </div>
             </div>
         </section>
-
     </footer>
 
 </body>
