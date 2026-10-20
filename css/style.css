@@ -10,6 +10,7 @@
     --brun: #6B3E26;
     --dore: #D4A64A;
     --texte: #2D241F;
+    --badge: #754923;
 }
 
 header {
@@ -42,6 +43,14 @@ h2 {
 }
 /* 5. Navigation */
 
+nav ul {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+    
+}
 nav a {
     color: var(--creme);
     text-decoration: none;
@@ -83,11 +92,16 @@ nav ul {
 /* 11. Mise en forme du footer */
 
 footer {
-    background-color: var(--texte);
+    background-color: var(--brun);
     color: var(--creme);
     text-align: center;
     padding: 2rem;
 }
+
+footer h2 {
+    color: var(--creme);
+}
+
 footer a {
     color: var(--dore);
 }
@@ -104,10 +118,24 @@ footer a:hover {
 /* Tableau prix */
 
 table {
-    width: 30%;
+    width: 50%;
     border-collapse: collapse;
     background-color: white;
+    table-layout: fixed;
 }
+
+th:first-child,
+td:first-child {
+    width: 40%;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(3),
+td:nth-child(3) {
+    width: 30%;
+}
+
 th, td {
     border: 1px solid var(--dore);
     padding: 0.75rem;
@@ -116,6 +144,9 @@ th, td {
 th {
     background-color: var(--brun);
     color: var(--creme);
+}
+caption {
+    font-weight: bold;
 }
 /* Couleur alternée tableau */
  
@@ -128,4 +159,46 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding:2rem;
+}
+ /* Mise en forme de la galerie */
+
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.galerie img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.galerie figure {
+    margin: 0;
+}
+.photo-principale {
+    grid-column: span 2;
+}
+
+.photo-fermeture {
+    grid-column: span 2;
+}
+
+.avec-badge {
+    position: relative;
+}
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.4rem 0.7rem;
+    background-color: var(--texte);
+    color: blanchedalmond;
+    border-radius: 4px;
+    font-weight: bold
+}
+.infos-pratiques ul {
+    list-style: none;
+    padding-left: 0;
 }
