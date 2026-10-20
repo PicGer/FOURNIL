@@ -41,16 +41,25 @@ h2 {
     border-bottom: 3px solid var(--dore);
     padding-bottom: 0.5rem;
 }
-/* 5. Navigation */
+            /* 5. Navigation */
 
 nav ul {
     list-style: none;
-    text-decoration: none;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    display: flex;
     justify-content: flex-start;
-    
+    gap: 1rem;
+
 }
+.menu li a {
+    color: var(--creme);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
 nav a {
     color: var(--creme);
     text-decoration: none;
@@ -76,7 +85,7 @@ nav ul {
     margin: 0;
 }
 
-/* 7. Présentation des produits */
+            /* 7. Présentation des produits de la carte */
 
 .produit {
     padding: 1.5rem;
@@ -85,11 +94,13 @@ nav ul {
     margin-bottom: 1.5rem;
     background-color: white;
 }
+
 .liste-produit {
     list-style: none;
     padding-left: 0;
+    border-radius: 10px;
 }
-/* 11. Mise en forme du footer */
+            /* 11. Mise en forme du footer */
 
 footer {
     background-color: var(--brun);
@@ -109,20 +120,27 @@ footer a {
 footer a:hover {
     color: var(--creme);
 }
-/* 12. Présentation des horaires */
+            /* 12. Présentation des horaires */
 
 .contact-horaire ul {
     list-style: none;
     padding-left: 0;
 }
-/* Tableau prix */
+            /* Tableau prix */
 
 table {
-    width: 50%;
+    width: 40%;
     border-collapse: collapse;
     background-color: white;
     table-layout: fixed;
 }
+
+ /* Mise en forme des lignes */
+
+th, td {
+    padding: 0.4rem 0.75rem;
+}
+ /* Mise en forme des colonnes */ 
 
 th:first-child,
 td:first-child {
@@ -145,6 +163,8 @@ th {
     background-color: var(--brun);
     color: var(--creme);
 }
+ /* Mise en gras du titre du tableau des prix */
+
 caption {
     font-weight: bold;
 }
@@ -153,14 +173,14 @@ caption {
 tbody tr:nth-child(even) {
     background-color: var(--creme);
 }
-/* Mise en page du contenu principal */
+            /* Mise en page du contenu principal */
 
 main {
     max-width: 1100px;
     margin: 0 auto;
     padding:2rem;
 }
- /* Mise en forme de la galerie */
+            /* Mise en forme de la galerie */
 
 .galerie {
     display: grid;
@@ -173,10 +193,14 @@ main {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border: 2px solid #2D241F;
+    border-radius: 10px;
 }
 .galerie figure {
     margin: 0;
+    position: relative;
 }
+
 .photo-principale {
     grid-column: span 2;
 }
